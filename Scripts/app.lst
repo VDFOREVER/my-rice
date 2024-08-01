@@ -11,7 +11,4 @@ bridge-utils
 obs
 neofetch
 htop
-rustup
-rust-analyzer
 mpv
-neovim

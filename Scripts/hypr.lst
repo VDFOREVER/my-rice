@@ -3,6 +3,12 @@ alacritty
 fish-shell
 Waybar
 hyprpicker
+hyprland
+xdg-desktop-portal-hyprland
+hyprlock
+hyprpaper
+hypridle
+hyprcursor
 wofi
 mako
 qt6-wayland
