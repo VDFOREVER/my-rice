@@ -25,7 +25,7 @@ window#waybar {
 	margin: 4px 0 4px 10px;
 	border-radius: 6 0 0 6;
 }
-#custom-alacritty {
+#custom-pick {
 	background: @black;
 	color: @fg;
   	padding: 0;

@@ -5,7 +5,7 @@
 	"spacing": 0,
 	"margin-bottom": 5,
 
-    "modules-left": ["custom/weather", "custom/alacritty", "custom/nemo", "custom/poweroff"],
+    "modules-left": ["custom/weather", "custom/pick", "custom/nemo", "custom/poweroff"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "hyprland/language", "clock"],
 
@@ -16,9 +16,9 @@
 		"tooltip": false
 	},
 
-	"custom/alacritty": {
-		"format": "",
-		"on-click": "exec alacritty",
+	"custom/pick": {
+		"format": "󰈊",
+		"on-click": "wl-copy $(hyprpicker)",
 		"tooltip": false
 	},
 
