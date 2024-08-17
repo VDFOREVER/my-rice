@@ -5,7 +5,7 @@
 	"spacing": 0,
 	"margin-bottom": 5,
 
-    "modules-left": ["custom/weather", "custom/pick", "custom/nemo", "custom/poweroff"],
+    "modules-left": ["custom/weather", "custom/pick", "custom/lock", "custom/poweroff"],
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["tray", "pulseaudio", "hyprland/language", "clock"],
 
@@ -22,9 +22,9 @@
 		"tooltip": false
 	},
 
-	"custom/nemo": {
-		"format": "󰉋",
-		"on-click": "exec nemo ~/",
+	"custom/lock": {
+		"format": "󰌋",
+		"on-click": "hyprlock",
 		"tooltip": false
 	},
 
