@@ -37,3 +37,5 @@ seatd
 elogind
 xorg-server-xwayland
 void-repo-nonfree
+slurp
+grim

@@ -9,6 +9,10 @@ cd ~/.themes
 tar -xvf themes.tar.gz
 rm themes.tar.gz
 
+cd ~/.fonts
+tar -xvf fonts.tar.gz
+rm fonts.tar.gz
+
 gsettings set org.gnome.desktop.interface icon-theme Flat-Remix-Black-Dark
 gsettings set org.gnome.desktop.interface gtk-theme Flat-Remix-GTK-Grey-Dark
 gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors-light
