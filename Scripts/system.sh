@@ -1,33 +1,38 @@
 #!/bin/bash
 
 #ignoreokgs.conf
-echo "
+doas echo "
 ignorepkg=sudo
 ignorepkg=linux-firmware-nvidia
 ignorepkg=linux-firmware-intel
 " >> /etc/xbps.d/ignorepkgs.conf
 
-echo "
+doas echo "
 repository=https://raw.githubusercontent.com/Makrennel/hyprland-void/repository-x86_64-glibc
 " >> /etc/xbps.d/hyprland-void.conf
 
 #install all app
-xbps-install -S $(cat app.lst) $(cat hypr.lst)
-xbps-remove sudo
-xbps-remove linux-firmware-nvidia
-xbps-remove linux-firmware-intel
+doas xbps-install -S $(cat app.lst) $(cat hypr.lst)
+doas xbps-remove sudo
+doas xbps-remove linux-firmware-nvidia
+doas xbps-remove linux-firmware-intel
+
+#doas settings
+doas echo "permit persist :wheel" >> /etc/doas.conf
 
 cp -R ../Config/.* ~/
 
-#doas settings
-echo "permit persist :wheel" >> /etc/doas.conf
-
 #other settings
-ln -s /etc/sv/dbus /var/service
-ln -s /etc/sv/polkitd /var/service
-ln -s /etc/sv/seatd /var/service
-ln -s /etc/sv/elogind /var/service
-ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+doas ln -s /etc/sv/dbus /var/service
+doas ln -s /etc/sv/polkitd /var/service
+doas ln -s /etc/sv/seatd /var/service
+doas ln -s /etc/sv/elogind /var/service
+
+doas ln -s /etc/sv/libvirtd /var/service
+doas ln -s /etc/sv/virtlockd /var/service 
+doas ln -s /etc/sv/virtlogd /var/service
+
+doas ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 doas usermod -aG _seatd $USER
 doas usermod -aG kvm $USER
