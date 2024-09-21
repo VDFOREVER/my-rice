@@ -18,7 +18,7 @@ doas xbps-remove linux-firmware-nvidia
 doas xbps-remove linux-firmware-intel
 
 #doas settings
-doas echo "permit persist :wheel" >> /etc/doas.conf
+doas echo "permit persist keepenv :wheel" >> /etc/doas.conf
 
 cp -R ../Config/.* ~/
 
