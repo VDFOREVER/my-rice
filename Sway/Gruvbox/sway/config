@@ -1,0 +1,99 @@
+output HDMI-A-1 resolution 1920x1080 position 0,0
+output HDMI-A-2 resolution 1600x900 position 1920,0
+
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-2
+
+exec_always swaymsg output "*" bg ~/.config/sway/wallpaper/wall.png fill
+exec_always waybar -c ~/.config/waybar/waybar -s ~/.config/waybar/waybar.css
+exec_always mako
+exec_always firefox
+exec_always telegram-desktop
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+set $mainMod Mod4
+set $terminal alacritty
+set $fileManager nemo
+set $menu wofi --show drun -I -c ~/.config/wofi/wofi -s ~/.config/wofi/wofi.css -l center
+
+input "*" {
+    xkb_layout us,ru
+    xkb_options grp:caps_toggle
+}
+
+gaps inner 5
+gaps outer 5
+default_border pixel 2
+client.focused     #d65d0e #d65d0e #fbf1c7 #d65d0e #d65d0e
+client.unfocused   #3c3836 #3c3836 #928374 #3c3836 #3c3836
+
+seat seat0 xcursor_theme "Capitaine Cursors (Gruvbox)" 24
+
+bindsym --to-code $mainMod+t exec $terminal
+bindsym --to-code $mainMod+e exec $fileManager
+bindsym --to-code $mainMod+r exec $menu
+
+bindsym --to-code $mainMod+c kill
+
+bindsym --to-code $mainMod+f fullscreen
+bindsym --to-code $mainMod+v floating toggle
+
+bindsym --to-code $mainMod+1 workspace 1
+bindsym --to-code $mainMod+2 workspace 2
+bindsym --to-code $mainMod+3 workspace 3
+bindsym --to-code $mainMod+4 workspace 4
+bindsym --to-code $mainMod+5 workspace 5
+bindsym --to-code $mainMod+6 workspace 6
+bindsym --to-code $mainMod+7 workspace 7
+bindsym --to-code $mainMod+8 workspace 8
+bindsym --to-code $mainMod+9 workspace 9
+bindsym --to-code $mainMod+0 workspace 10
+
+bindsym --to-code $mainMod+Shift+1 move container to workspace 1
+bindsym --to-code $mainMod+Shift+2 move container to workspace 2
+bindsym --to-code $mainMod+Shift+3 move container to workspace 3
+bindsym --to-code $mainMod+Shift+4 move container to workspace 4
+bindsym --to-code $mainMod+Shift+5 move container to workspace 5
+bindsym --to-code $mainMod+Shift+6 move container to workspace 6
+bindsym --to-code $mainMod+Shift+7 move container to workspace 7
+bindsym --to-code $mainMod+Shift+8 move container to workspace 8
+bindsym --to-code $mainMod+Shift+9 move container to workspace 9
+bindsym --to-code $mainMod+Shift+0 move container to workspace 10
+
+bindsym --to-code $mainMod+Shift+h move left
+bindsym --to-code $mainMod+Shift+l move right
+bindsym --to-code $mainMod+Shift+k move up
+bindsym --to-code $mainMod+Shift+j move down
+
+bindsym --to-code $mainMod+h focus left
+bindsym --to-code $mainMod+l focus right
+bindsym --to-code $mainMod+k focus up
+bindsym --to-code $mainMod+j focus down
+
+bindsym --to-code $mainMod+Mod1+h move left 50px
+bindsym --to-code $mainMod+Mod1+l move right 50px
+bindsym --to-code $mainMod+Mod1+k move up 50px
+bindsym --to-code $mainMod+Mod1+j move down 50px
+
+mode "resize" {
+    bindsym --to-code h resize shrink width 10 px
+    bindsym --to-code l resize grow width 10 px
+    bindsym --to-code k resize shrink height 10 px
+    bindsym --to-code j resize grow height 10 px
+    bindsym --to-code Return mode "default"
+    bindsym --to-code Escape mode "default"
+}
+bindsym --to-code $mainMod+Control+r mode "resize"
+
+bindsym --to-code Print exec ~/.config/sway/swayshot.sh sf
+
+bindsym --to-code $mainMod+button4 workspace prev
+bindsym --to-code $mainMod+button5 workspace next
+
+
+floating_modifier $mainMod
+
+
+bindsym --to-code $mainMod+m exit
+
+include /etc/sway/config.d/*

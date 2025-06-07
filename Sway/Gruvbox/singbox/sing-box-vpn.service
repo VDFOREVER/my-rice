@@ -1,0 +1,15 @@
+[Unit]
+Description=Singbox VPN Tunnel
+Wants=sing-box.service
+PartOf=sing-box.service
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/bash /etc/sing-box/vpn-run-root.sh start /etc/sing-box/sing-box-vpn.json
+ExecStop=/bin/bash /etc/sing-box/vpn-run-root.sh stop /etc/sing-box/sing-box-vpn.json
+#Environment=PATH=/usr/sbin:/usr/bin:/sbin:/bin:/run/current-system/sw/bin
+
+[Install]
+WantedBy=sing-box.service

@@ -1,0 +1,74 @@
+{
+    "position": "bottom",
+    "margin-bottom": 5,
+    "spacing": 0,
+    "height":  15,
+    
+    "modules-left": ["custom/weather", "custom/pick", "custom/lock", "custom/poweroff", "memory"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["tray", "pulseaudio", "sway/language", "clock"],
+    
+    "custom/weather": {
+        "format": "󰖞 {}",
+        "interval": 300,
+        "exec": "~/.config/waybar/weather.sh",
+        "tooltip": false
+    },
+    
+    "custom/pick": {
+        "format": "󰈊",
+        "on-click": "wl-copy $(hyprpicker)",
+        "tooltip": false
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "RAM: {used:0.1f}G/{total:0.1f}G"
+    },
+
+    "custom/lock": {
+        "format": "󰌋",
+        "on-click": "hyprlock",
+        "tooltip": false
+    },
+    
+    "custom/poweroff": {
+        "format": "⏻",
+        "on-click": "systemctl poweroff",
+        "tooltip": false
+    },
+    
+    "sway/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "tooltip": false,
+        "all-outputs": true
+    },
+    
+    "tray": {
+        "icon-size": 14,
+        "spacing": 15,
+    },
+    
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}{volume}%",
+        "format-icons": {
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    
+    "sway/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+    
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    
+    "escape": true
+}

@@ -1,0 +1,8 @@
+layer=overlay
+ignore-timeout=1
+default-timeout=4000
+font="Terminus"
+padding=7
+background-color=#282828
+border-color=#d65d0e
+border-radius=0

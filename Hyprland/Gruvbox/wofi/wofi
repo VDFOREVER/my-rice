@@ -1,0 +1,9 @@
+height = 270
+width = 450
+
+no_actions = true
+hide_scroll = true
+
+image_size = 20
+prompt = "search"
+term = "alacritty"
