@@ -4,6 +4,7 @@ output HDMI-A-2 resolution 1600x900 position 1920,0
 workspace 1 output HDMI-A-1
 workspace 2 output HDMI-A-2
 
+exec --no-startup-id python ~/.config/sway/alternating_layouts.py
 exec_always swaymsg output "*" bg ~/.config/sway/wallpaper/wall.png fill
 exec_always waybar -c ~/.config/waybar/waybar -s ~/.config/waybar/waybar.css
 exec_always mako
