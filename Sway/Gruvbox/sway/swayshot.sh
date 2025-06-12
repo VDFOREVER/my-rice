@@ -45,8 +45,6 @@ m) # focused output
 	;;
 esac
 
-mv "$temp_screenshot" "${save_dir}/${save_file}"
-
 if [ -f "${save_dir}/${save_file}" ]; then
 	save_dir_pretty="${save_dir/$HOME/~}"
 	notify-send -a "Screenshot" -i "${save_dir}/${save_file}" "Saved to ${save_dir_pretty}"
