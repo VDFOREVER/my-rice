@@ -25,7 +25,7 @@ input "*" {
 for_window [app_id="org.telegram.desktop" title="Media viewer"] floating enable, fullscreen enable
 
 gaps inner 5
-gaps outer 5
+gaps outer 0
 default_border pixel 2
 client.focused     #d65d0e #d65d0e #fbf1c7 #d65d0e #d65d0e
 client.unfocused   #3c3836 #3c3836 #928374 #3c3836 #3c3836
